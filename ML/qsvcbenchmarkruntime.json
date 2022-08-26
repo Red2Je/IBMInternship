@@ -1,0 +1,65 @@
+{
+    "name" : "qsvcruntime",
+    "description" : "Runtime with feature map evaluation, benchmark over the amount of features, maxed out by the amount of qubits.",
+    "max_execution_time" : 28800,
+    "spec" : {
+        "backend_requirements" : {
+            "min_num_qubits" : 0
+        },
+        "parameters":{
+            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "properties":{
+                "train_data":{
+                    "type":"list",
+                    "description": "List of train data"
+                },
+                "train_label":{
+                    "type":"list",
+                    "description":"List of train labels, in one hot vector form"
+                },
+                "test_data":{
+                    "type":"list",
+                    "description": "List of test data"
+                },
+                "test_label":{
+                    "type":"list",
+                    "description":"List of test labels, in one hot vector form"
+                },
+                "max_features":{
+                    "type":"int",
+                    "description" : "Maximum amount of features the benchmark will be run with. The amount of features start at 2 and evolves 2 by 2."
+                },
+                "max_iter_qsvc":{
+                    "type" : "int",
+                    "description":"Max iter parameter of QSVC"
+                },
+                "noise_model":{
+                    "type" : "object",
+                    "description" : "an optional  noise model"
+                }
+            },
+            "required":[
+                "train_data",
+                "train_label",
+                "test_data",
+                "test_label",
+                "max_features",
+                "max_iter_qsvc"
+            ]
+        },
+        "return_values": {
+            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "description" : "A dictionnary with the key \"score\" containing the scores of the run and the key \"times\" the amount of time required to run.",
+            "type" : "list"
+        },
+        "interim_results":{
+            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "properties":{
+                "s":{
+                    "type":"string",
+                    "description":"Whatever i want to tell myself"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "name" : "sklearn-version",
+    "description" : "Runtime to gather the versions of the installed modules on a backend",
+    "max_execution_time" : 28800,
+    "spec" : {
+        "backend_requirements" : {
+            "min_num_qubits" : 0
+        },
+        "parameters":{
+            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "properties":{
+                
+            },
+            "required":[
+            ]
+        },
+        "return_values": {
+            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "description" : "A list with the modules names and their version",
+            "type" : "list"
+        }
+    }
+}

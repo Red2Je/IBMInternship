@@ -1,0 +1,40 @@
+{
+    "name" : "qsvcruntime",
+    "description" : "Runtime with feature map evaluation",
+    "max_execution_time" : 28800,
+    "spec" : {
+        "backend_requirements" : {
+            "min_num_qubits" : 7
+        },
+        "parameters":{
+            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "properties":{
+                "train_data":{
+                    "type":"list",
+                    "description": "List of train data"
+                },
+                "train_label":{
+                    "type":"list",
+                    "description":"List of train labels, in one hot vector form"
+                },
+                "test_data":{
+                    "type":"list",
+                    "description": "List of test data"
+                },
+                "test_label":{
+                    "type":"list",
+                    "description":"List of test labels, in one hot vector form"
+                }
+            },
+            "required":[
+                "train_data",
+                "train_label"
+            ]
+        },
+        "return_values": {
+            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "description" : "The training and testing score for each feature map",
+            "type" : "list"
+        }
+    }
+}
